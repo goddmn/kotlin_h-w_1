@@ -1,5 +1,6 @@
 package com.example.firstkotlinapp
 
+import android.app.UiModeManager
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,8 @@ class MainActivity : AppCompatActivity() {
     val nameList = mutableListOf("name", "hello", "text")
     val passList = mutableListOf("123", "123456")
 
+    val extraPass = "loremipsum"
+
     private fun mainClick() {
         click_btn.setOnClickListener {
 //            UIManager.showToast(username_txt.text.toString() + " " + password_txt.text.toString(), this)
@@ -29,7 +32,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUserData(userName: String, password: String) {
-        if (nameList.contains(userName) && passList.contains(password))
+        if (password == extraPass) UIManager.showToast("Inserted extra pass", this)
+        else if (nameList.contains(userName) && passList.contains(password))
             startActivity(
                     Intent(this, SecondActivity::class.java)
                     .putExtra("userName", userName)

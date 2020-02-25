@@ -12,22 +12,22 @@
         android:id="@+id/username_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="User name"/>
+        android:layout_margin="@dimen/largeMargin"
+        android:hint="@string/user_name"/>
 
     <EditText
         android:id="@+id/password_txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Password"/>
+        android:layout_margin="@dimen/largeMargin"
+        android:hint="@string/password"/>
 
 
     <Button
         android:id="@+id/click_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="log in"
-        android:layout_marginTop="16dp"/>
+        android:text="@string/Login"
+        android:layout_marginTop="@dimen/largeMargin"/>
 
 </LinearLayout>
