@@ -9,5 +9,9 @@ class UIManager {
         fun showToast(message: String, context: Context) {
             Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         }
+        fun showShortToast(message: String, context: Context) {
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+        }
     }
+
 }
