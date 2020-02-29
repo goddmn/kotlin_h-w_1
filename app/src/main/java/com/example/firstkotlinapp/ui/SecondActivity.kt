@@ -1,7 +1,9 @@
-package com.example.firstkotlinapp
+package com.example.firstkotlinapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.firstkotlinapp.R
+import com.example.firstkotlinapp.utils.UIManager
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {

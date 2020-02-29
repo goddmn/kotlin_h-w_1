@@ -1,8 +1,10 @@
-package com.example.firstkotlinapp
+package com.example.firstkotlinapp.ui
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.firstkotlinapp.R
+import com.example.firstkotlinapp.utils.UIManager
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,10 +20,8 @@ class MainActivity : AppCompatActivity() {
     val nameList = mutableListOf("name", "hello", "text")
     val passList = mutableListOf("123", "123456")
 
-    val extraPass = "loremipsum"
-
-    val adminUserName = "90"
-    val adminUserPass = "94"
+    val secondUserName = "90"
+    val secondPass = "94"
 
     private fun mainClick() {
         click_btn.setOnClickListener {
@@ -32,13 +32,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkUserData(userName: String, password: String) {
-        if (password == extraPass) UIManager.showToast("Inserted extra pass", this)
-        else if(userName == adminUserName && password == adminUserPass){
-            startActivity(Intent(this, AdminActivity::class.java)
+        if(userName == secondUserName && password == secondPass){
+            startActivity(Intent(this, ThirdActivity::class.java)
                 .putExtra("adminUserName", userName)
                 .putExtra("adminPass", password)
             )
-            UIManager.showShortToast("Welcome back, admin!", this)
+//            UIManager.showShortToast("Welcome back, admin!", this)
         }
         else if (nameList.contains(userName) && passList.contains(password))
             startActivity(

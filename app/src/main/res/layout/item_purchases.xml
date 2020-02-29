@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.ThirdActivity">
+
+    <TextView
+        android:id="@+id/sale_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="address"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        />
+
+    <TextView
+        android:id="@+id/sale_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        />
+
+    <TextView
+        android:id="@+id/sale_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="discount"
+        android:paddingTop="16dp"
+        android:paddingLeft="16dp"
+        />
+
+    <RelativeLayout
+        android:layout_marginTop="27dp"
+        android:paddingLeft="16dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/item_id_title"
+            android:text="№"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/item_name_title"
+            android:text="Название товара"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="7dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@id/item_id_title"/>
+
+        <TextView
+            android:id="@+id/item_count_title"
+            android:text="кол-во товара"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@+id/item_name_title"
+            />
+
+        <TextView
+            android:id="@+id/item_discount_title"
+            android:text="скидка"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="17dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@id/item_count_title"/>
+
+        <TextView
+            android:id="@+id/item_total_title"
+            android:text="сумма"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@id/item_discount_title"/>
+
+        <TextView
+            android:layout_below="@id/item_total_title"
+            android:id="@+id/item_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="21dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/item_name_title"
+            android:layout_alignRight="@id/item_name_title"
+            android:textAlignment="center"
+            android:layout_alignBottom="@id/item_id" />
+
+        <TextView
+            android:id="@+id/item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/item_count_title"
+            android:layout_alignRight="@id/item_count_title"
+            android:textAlignment="center"
+            android:layout_alignBottom="@id/item_id"/>
+
+        <TextView
+            android:id="@+id/item_discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="18dp"
+            android:layout_alignBottom="@id/item_id"
+            android:textAlignment="center"
+            android:layout_alignLeft="@id/item_discount_title"
+            android:layout_alignRight="@id/item_discount_title"
+            />
+
+        <TextView
+            android:id="@+id/item_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_alignLeft="@id/item_total_title"
+            android:layout_alignRight="@id/item_total_title"
+            android:layout_alignBottom="@id/item_discount" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
