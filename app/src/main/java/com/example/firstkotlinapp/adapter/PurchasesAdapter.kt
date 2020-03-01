@@ -3,37 +3,26 @@ package com.example.firstkotlinapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.firstkotlinapp.R
 import com.example.firstkotlinapp.model.Purchases
 import com.example.firstkotlinapp.model.SalesModel
-import kotlinx.android.synthetic.main.activity_second.view.*
+import kotlinx.android.synthetic.main.item_purchases.view.*
 
-class PurchasesAdapter(val model: ArrayList<SalesModel>, val items: ArrayList<Purchases>) : RecyclerView.Adapter<PurchasesAdapter.ViewHolder>(){
+class PurchasesAdapter(val model: SalesModel) : RecyclerView.Adapter<PurchasesAdapter.ViewHolder>(){
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val items: Purchases = items[position]
-        val sale: SalesModel = model[position]
-
-        holder?.saleAddressTitle?.text = sale.address
-        holder?.date?.text = sale.date
-        holder?.itemName?.text = items.purchasesName
-        holder?.itemCount?.text = items.count.toString()
-        holder?.itemId?.text = items.number.toString()
-        holder?.itemDiscount.text = items.discount.toString()
+        holder.bind(model.list[position], model.list.size)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val saleAddressTitle = itemView.findViewById<View>(R.id.sale_address) as TextView
-        val date = itemView.findViewById<View>(R.id.sale_date) as TextView
-        val discount = itemView.findViewById<View>(R.id.sale_discount) as TextView
-
-        val itemId = itemView.findViewById<View>(R.id.item_id) as TextView
-        val itemName = itemView.findViewById<View>(R.id.item_name) as TextView
-        val itemCount = itemView.findViewById<View>(R.id.item_count) as TextView
-        val itemDiscount = itemView.findViewById<View>(R.id.item_discount) as TextView
-        val itemTotal = itemView.findViewById<View>(R.id.item_total) as TextView
+        fun bind(purchases: Purchases, size: Int) {
+            itemView.item_id.text = purchases.number.toString()
+            itemView.item_name.text = purchases.purchasesName
+            itemView.item_amount.text = size.toString()
+            itemView.item_discount.text = purchases.discount.toString()
+            itemView.item_price.text = purchases.price.toString()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -42,7 +31,7 @@ class PurchasesAdapter(val model: ArrayList<SalesModel>, val items: ArrayList<Pu
     }
 
     override fun getItemCount(): Int {
-        return model.size
+        return model.list.size
     }
 
 }

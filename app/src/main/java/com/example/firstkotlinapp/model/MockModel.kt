@@ -4,9 +4,9 @@ import java.util.*
 
 data class SalesModel(
     val storeName: String,
-    val date: String,
-    val address: String,
-    val list: List<Purchases>
+    val date: Date,
+    val list: List<Purchases>,
+    val amount: Int = list.size
 )
 
 data class Purchases(
@@ -14,7 +14,6 @@ data class Purchases(
     val purchasesName: String,
     val price: Double,
     val discount: Double,
-    val count: Double
-//    val result: Double = price - discount
+    val result: Double = price - discount
 )
 
